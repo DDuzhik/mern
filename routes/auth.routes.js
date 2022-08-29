@@ -87,7 +87,8 @@ router.post(
                 { expiresIn: '30d'}
             )
         
-            res.json({ token, userId: user.id })
+            //console.log(user.email)
+            res.json({ token, userId: user.id, name: user.email })
             
             
         } catch (e) {
