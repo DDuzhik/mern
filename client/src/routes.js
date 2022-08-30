@@ -4,15 +4,24 @@ import { LinksPage } from './pages/LinksPage'
 import { CreatePage } from './pages/CreatePage'
 import { DetailPage } from './pages/DetailPage'
 import { AuthPage } from './pages/AuthPage'
+import { VehiclesPage } from './pages/VehiclesPage'
+import { CreateVehiclePage } from './pages/vehicle/CreateVehiclePage'
+import { VehiclePage } from './pages/vehicle/VehiclePage'
+import { UserProfilePage } from './pages/UserProfilePage'
+
 
 export const useRoutes = isAuthenticated => {
     if (isAuthenticated) {
         return (
             <Routes>
                 <Route path="/links" element={<LinksPage />} />
+                <Route path="/userprofile" element={<UserProfilePage />} />
+                <Route path="/vehicles" element={<VehiclesPage />} />
+                <Route path="/vehicles/:id" element={<VehiclePage />} />
+                <Route path="/vehicles/create" element={<CreateVehiclePage />} />
                 <Route path="/create" element={<CreatePage />} />
                 <Route path="/detail/:id" element={<DetailPage />} />
-                <Route path="*" element={<Navigate to ="/create" />}/>
+                <Route path="*" element={<Navigate to ="/userprofile" />}/>
             </Routes>
         )
     }

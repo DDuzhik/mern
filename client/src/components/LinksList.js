@@ -1,21 +1,24 @@
 import React from "react"
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 export const LinksList = ({ links }) => {
-    console.log(links)
+    //console.log(links)
     if (!links/*.length*/) {
         return <p className="center">Linkslist is empty...</p>
     }
 
 
     return (
+      <>
+        <h2>Links</h2>
+        <NavLink to="/create">Create</NavLink>
         <table>
         <thead>
           <tr>
               <th>#</th>
               <th>Origin</th>
               <th>Short</th>
-              <th>Open</th>
+              <th>Action</th>
           </tr>
         </thead>
 
@@ -36,5 +39,6 @@ export const LinksList = ({ links }) => {
           
         </tbody>
       </table>
+      </>
     )
 }
