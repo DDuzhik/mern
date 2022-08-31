@@ -11,7 +11,7 @@ export const VehicleList = ({ vehicles }) => {
     return (
       <>
         <h2>Vehicles</h2>
-        <NavLink to="/vehicles/create">Create</NavLink>
+        <NavLink to="/vehicles/create">Create new vehicle</NavLink>
         <table>
         <thead>
           <tr>
@@ -19,7 +19,7 @@ export const VehicleList = ({ vehicles }) => {
               <th>Year</th>
               <th>Make</th>
               <th>Model</th>
-              <th>Action</th>
+              <th>License Plate</th>
           </tr>
         </thead>
 
@@ -28,12 +28,19 @@ export const VehicleList = ({ vehicles }) => {
               return (
                 <tr key={vehicles._id}>
                     <td>{index + 1}</td>
-                    <td>{vehicles.year}</td>
-                    <td>{vehicles.make}</td>
-                    <td>{vehicles.model}</td>
                     <td>
-                        <Link to={`/vehicles/${vehicles._id}`}> Open </Link>
+                        <Link to={`/vehicles/${vehicles._id}`}> {vehicles.year} </Link>
                     </td>
+                    <td>
+                        <Link to={`/vehicles/${vehicles._id}`}> {vehicles.make} </Link>
+                    </td>
+                    <td>
+                        <Link to={`/vehicles/${vehicles._id}`}> {vehicles.model} </Link>
+                    </td>
+                    <td>
+                        <Link to={`/vehicles/${vehicles._id}`}> {vehicles.lp} </Link>
+                    </td>
+                    
                 </tr>
               )  
             })}

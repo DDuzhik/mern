@@ -7,9 +7,11 @@ const schema = new Schema({
     lName: {type: String},
     dateOfBirth: {type: Date, default: Date.now},
     dl: {type: String},
+    dlState: {type: String},
     dlExp: {type: Date, default: Date.now},
     joinDate: {type: Date, default: Date.now},
     vehicles: [{ type: Types.ObjectId, ref: 'Vehicle'}],
+    ownVehicles: [{ type: Types.ObjectId, ref: 'Vehicle'}],
     links: [{ type: Types.ObjectId, ref: 'Link'}]
 })
 

@@ -31,7 +31,8 @@ export const VehiclesPage = () => {
     return (
             
         <>
-            {!loading && <VehicleList vehicles={vehicles} />}  
+            {!loading && <VehicleList vehicles={vehicles} />}
+            
         </> 
     )
 }

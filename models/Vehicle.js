@@ -7,8 +7,9 @@ const schema = new Schema({
     color: {type: String},
     vin: {type: String},
     lp: {type: String},
+    regState: {type: String},
     regExp: {type: Date, default: Date.now},
-    unit: {type: Number},
+    unit: {type: String},
     joinDate: {type: Date, default: Date.now},
     owner: {type: Types.ObjectId, ref: 'User'},
     drivers: [{ type: Types.ObjectId, ref: 'User'}]
