@@ -7,6 +7,7 @@ import { useAuth } from '../hooks/auth.hook'
 
 
 
+
 export const Navbar = () => {
     const {userName} = useAuth()
     //const history = useNavigate()
@@ -27,6 +28,7 @@ export const Navbar = () => {
                                 
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                                         
+                    <li><NavLink to="/dev">DEV</NavLink></li>
                     <li><NavLink to="/vehicles">Vehicles</NavLink></li>
                     <li><NavLink to="/links">Links</NavLink></li>
                     <li><NavLink to="/userprofile" className="waves-effect waves-light btn-small blue darken-2" >{userName}</NavLink></li>
